@@ -1,26 +1,76 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Feed from './pages/Feed';
+import NewPost from './pages/NewPost';
+import Profile from './pages/Profile';
+import Settings from './pages/Settings';
+import Messages from './pages/Messages';
+import setting from './images/settings.svg';
+import message from './images/noNewMessage.svg';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
+class App extends React.Component {
+
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      
+      <Navbar bg="light" expand="md">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Link className="nav-link" to='/settings'><img src={setting}></img></Link>
+              <Link className="nav-link" to='/profile'>Profile</Link>
+              <Link to='/'><h1 className="siteName">Social Site</h1></Link>
+              <Link className="nav-link" to='/newPost'>New Post</Link>
+              <Link className="nav-link" to='/feed'>Feed</Link>
+              <Link className="nav-link" to='/messages'><img src={message}></img></Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <form class="form-flex my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      <Container>
+        <Switch>
+            <Route exact path="/">
+              <Feed/>
+            </Route>
+            <Route exact path="/profile">
+              <Profile/>
+            </Route>
+            <Route exact path="/messages">
+              <Messages/>
+            </Route>
+            <Route exact path="/newPost">
+              <NewPost/>
+            </Route>
+            <Route exact path="/feed">
+              <Feed/>
+            </Route>
+            <Route exact path="/settings">
+              <Settings/>
+            </Route>
+            <Route path="/">
+              Error: 404 not found
+            </Route>
+          </Switch>
+      </Container>
+    </Router>
   );
+  }
 }
 
 export default App;
+
+

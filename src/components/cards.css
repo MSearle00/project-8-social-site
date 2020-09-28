@@ -1,0 +1,64 @@
+.statusCards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    height:auto;
+    margin: auto;
+    margin-top: 10px;
+    align-items: flex-start;
+    background-color:#f8f9fa;
+    color: black;
+    border-radius: 0.5em;
+    border: black 2px solid;
+}
+
+.statusInfo{
+    margin-left: 0.5em;
+    margin-top: 0.25em;
+}
+
+.likesCounter{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.likeButton{
+    margin-left:0.5em;
+    margin-bottom: 0.5em;
+}
+
+.likeValue{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-left: 0.5em;
+}
+
+.deleteButton{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.createPost{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.usernameInput{
+    height:2em;
+    width:15em;
+    margin-left:2em
+}
+
+.statusInput{
+    height:auto;
+    width: 80%;
+    margin-left:2em;
+}
