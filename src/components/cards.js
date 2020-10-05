@@ -19,11 +19,8 @@ class Cards extends React.Component{
     render(){
         return(
             <div className = "statusCards">
-                <div className = "deleteButton">
-                    <DeleteButton/>
-                </div>
-                <h4 className="statusInfo"> Username:{this.state.username} </h4>
-                <p className="statusInfo"> Status: {this.state.text} </p>
+                <h4 className="UserInfo"> Username:{this.props.userID} <DeleteButton/> </h4>
+                <h5 className="statusInfo"> Status: {this.props.status} </h5>
                 <div className="likesCounter">
                     <LikeButton/>
                     <DislikeButton/>

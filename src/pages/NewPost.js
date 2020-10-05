@@ -20,15 +20,20 @@ createCard(i, ref){
   )
  }
 
-addCard(){
-  this.setState((state) =>{
-    const ref = React.createRef();
-    const newCard = this.createCard(state.card.length, ref);
-    return({
-      card: state.card.concat(newCard),
-      cardRefs: state.cardRefs.concat(ref)
-    })
-  })
+addCard(event){
+      event.preventDefault();
+      this.props.onsubmit(this.state.username, this.state.status, 0);
+      this.setState({username: "", status: ""});
+
+      
+  // this.setState((state) =>{
+  //   const ref = React.createRef();
+  //   const newCard = this.createCard(state.card.length, ref);
+  //   return({
+  //     card: state.card.concat(newCard),
+  //     cardRefs: state.cardRefs.concat(ref)
+  //   })
+  // })
   }
 
   usernameChangeHandler = (event) => {
@@ -46,10 +51,10 @@ addCard(){
       <div className = "statusCards">
         <h4 className="statusInfo"> Username:</h4>
         <input type="text" className="usernameInput" value={this.state.username} onChange={this.usernameChangeHandler}></input>
-        <p className="statusInfo"> Status:</p>
+        <h5 className="statusInfo"> Status:</h5>
         <input type="text" className="statusInput" value={this.state.status} onChange={this.statusChangeHandler} ></input>
         <div className="createPost">
-        <button onClick={() => this.addCard()}>Create Post</button>
+        <button onClick={(e) => this.addCard(e)}>Create Post</button>
         </div>
       </div>
     </div>

@@ -12,7 +12,13 @@
     border-radius: 0.5em;
     border: black 2px solid;
 }
-
+.UserInfo{
+    margin-left: 0.5em;
+    margin-top: 0.25em;
+    width:98%;
+    display: flex;
+    justify-content: space-between;
+}
 .statusInfo{
     margin-left: 0.5em;
     margin-top: 0.25em;
@@ -35,13 +41,6 @@
     align-items: center;
     margin: 0;
     margin-left: 0.5em;
-}
-
-.deleteButton{
-    width:100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 .createPost{

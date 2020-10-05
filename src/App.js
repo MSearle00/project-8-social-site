@@ -19,6 +19,19 @@ import {
 } from "react-router-dom";
 
 class App extends React.Component {
+    constructor(props){
+      super(props);
+
+      this.state = {
+        listItems: [{userID:"userid", status:"status", likesCounter:0}]
+
+      }
+    }
+
+  updateListItems(userID, status, likesCounter){
+    const listItem = {userID, status, likesCounter}
+    this.setState((state) => ({listItems: state.listItems.concat(listItem)}))
+  }
 
   render(){
   return (
@@ -53,10 +66,10 @@ class App extends React.Component {
               <Messages/>
             </Route>
             <Route exact path="/newPost">
-              <NewPost/>
+              <NewPost onsubmit={(userID, status, likesCounter) => this.updateListItems(userID, status, likesCounter)}/>
             </Route>
             <Route exact path="/feed">
-              <Feed/>
+              <Feed listItems={this.state.listItems}/>
             </Route>
             <Route exact path="/settings">
               <Settings/>
