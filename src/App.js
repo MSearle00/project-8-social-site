@@ -57,7 +57,7 @@ class App extends React.Component {
       <Container>
         <Switch>
             <Route exact path="/">
-              <Feed/>
+              <Feed listItems={this.state.listItems}/>
             </Route>
             <Route exact path="/profile">
               <Profile/>
