@@ -14,12 +14,12 @@ class DeleteButton extends React.Component{
     }
 
     removeCard(){
-        this.setState((state) =>{
-          return({
-            card: state.card.slice(0, state.card.length -1),
-            cardRefs: state.cardRefs.slice(0, state.cardRefs.length -1)
-          })
-        })
+        // this.setState((state) =>{
+        //   return({
+        //     card: state.card.slice(0, state.card.length -1),
+        //     cardRefs: state.cardRefs.slice(0, state.cardRefs.length -1)
+        //   })
+        // })
         }
 
     render(){

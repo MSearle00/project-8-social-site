@@ -22,18 +22,8 @@ createCard(i, ref){
 
 addCard(event){
       event.preventDefault();
-      this.props.onsubmit(this.state.username, this.state.status, 0);
+      this.props.onsubmit(this.props.postID, this.state.username, this.state.status, 0);
       this.setState({username: "", status: ""});
-
-      
-  // this.setState((state) =>{
-  //   const ref = React.createRef();
-  //   const newCard = this.createCard(state.card.length, ref);
-  //   return({
-  //     card: state.card.concat(newCard),
-  //     cardRefs: state.cardRefs.concat(ref)
-  //   })
-  // })
   }
 
   usernameChangeHandler = (event) => {

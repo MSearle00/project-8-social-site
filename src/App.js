@@ -28,8 +28,8 @@ class App extends React.Component {
       }
     }
 
-  updateListItems(userID, status, likesCounter){
-    const listItem = {userID, status, likesCounter}
+  updateListItems(postID, userID, status, likesCounter){
+    const listItem = {postID, userID, status, likesCounter}
     this.setState((state) => ({listItems: state.listItems.concat(listItem)}))
   }
 
@@ -66,7 +66,7 @@ class App extends React.Component {
               <Messages/>
             </Route>
             <Route exact path="/newPost">
-              <NewPost onsubmit={(userID, status, likesCounter) => this.updateListItems(userID, status, likesCounter)}/>
+              <NewPost onsubmit={(postID, userID, status, likesCounter) => this.updateListItems(postID, userID, status, likesCounter)}/>
             </Route>
             <Route exact path="/feed">
               <Feed listItems={this.state.listItems}/>

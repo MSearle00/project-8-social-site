@@ -14,10 +14,9 @@ class Feed extends React.Component {
 }
 
 createPostList(){
-  console.log(this.props.listItems)
   return(
     this.props.listItems.map((current, i) => 
-    (<Cards key={i} userID={current.userID} status={current.status} likesCounter={current.likesCounter}/>))
+    (<Cards key={i} postID={current.postID} userID={current.userID} status={current.status} likesCounter={current.likesCounter}/>))
   )
 }
 

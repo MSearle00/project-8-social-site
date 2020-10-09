@@ -9,6 +9,7 @@ class Cards extends React.Component{
         super();
 
         this.state = {
+            postId: 0,
             username: "",
             text: "",
             likes: 0,
